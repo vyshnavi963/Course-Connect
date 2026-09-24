@@ -6,5 +6,5 @@ courseRoute.get("/", getCourses)
 courseRoute.post("/",protect,authorize('instructor','student'), createCourses)
 courseRoute.get("/:id", getCoursesById)
 courseRoute.put("/:id", protect,authorize('instructor','admin'),updateCourses)
-courseRoute.delete("/:id",protect,authorize('instructor','admin'), deleteCourses)
+courseRoute.delete("/:id",deleteCourses)
 module.exports = courseRoute
